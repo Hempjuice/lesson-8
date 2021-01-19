@@ -13,11 +13,7 @@ class BaseVehicle:
 
     @abstractmethod
     def start_moving(self):
-        if self._is_moving:
-            raise ValueError(self.full_name + ' уже движется!')
-        else:
-            self._is_moving = True
-            print(self.full_name + ' начинает движение')
+        pass
 
     def stop_moving(self):
         if self._is_moving:
@@ -44,4 +40,4 @@ class BaseVehicle:
         try:
             self._color = str(val)
         except Exception:
-            print(f'Неверное значение цвета: {val}')
+            raise ValueError(f'Неверное значение цвета: {val}')
